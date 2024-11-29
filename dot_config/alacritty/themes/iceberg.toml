@@ -1,0 +1,42 @@
+# Original: https://github.com/seahal/iceberg_theme_for_alacritty/blob/master/iceberg.yml
+
+# Default colors
+[colors.primary]
+background = '#16171e'
+foreground = '#d1d2d3'
+
+# Cursor colors
+[colors.cursor]
+text   = '#feffff'
+cursor = '#c7c7c7'
+
+# Normal colors
+[colors.normal]
+black   = '#000000'
+red     = '#e68e8e'
+green   = '#83ac8e'
+yellow  = '#f5b78a'
+blue    = '#9bb8dc'
+magenta = '#baace2'
+cyan    = '#00c5c7'
+white   = '#c7c7c7'
+
+
+# Bright colors
+[colors.bright]
+black   = '#41505e'
+red     = '#d95468'
+green   = '#8bd49c'
+yellow  = '#ebbf83'
+blue    = '#5ec4ff'
+magenta = '#e27e8d'
+cyan    = '#70e1e8'
+white   = '#ffffff'
+black   = '#676767'
+red     = '#ff6d67'
+green   = '#5ff967'
+yellow  = '#fefb67'
+blue    = '#6871ff'
+magenta = '#ff76ff'
+cyan    = '#5ffdff'
+white   = '#feffff'
