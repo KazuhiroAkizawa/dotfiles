@@ -12,6 +12,8 @@ jobs:
       - name: Show home directory before appling
         run: ls -la $HOME
       - name: Apply dotfiles
-        run: chezmoi init --apply $GITHUB_REPOSITORY_OWNER
+        run: chezmoi init --apply --branch ${{ github.ref_name }} $GITHUB_REPOSITORY_OWNER
+      - name: Show source directory of dotfiles
+        run : ls -la $(chezmoi source-path)
       - name: Show home directory after appling
         run: ls -la $HOME
