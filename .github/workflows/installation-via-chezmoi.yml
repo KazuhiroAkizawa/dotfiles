@@ -1,0 +1,19 @@
+name: Installation test via chezmoi
+on:
+  push:
+    branches:
+      - "feature/**"
+jobs:
+  installation-on-ubuntu:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install chezmoi
+        run: sh -c "$(wget -qO- get.chezmoi.io)" -- -b $HOME/.local/bin
+      - name: Show home directory before appling
+        run: ls -la $HOME
+      - name: Apply dotfiles
+        run: chezmoi init --apply --branch ${{ github.ref_name }} $GITHUB_REPOSITORY_OWNER
+      - name: Show source directory of dotfiles
+        run : ls -la $(chezmoi source-path)
+      - name: Show home directory after appling
+        run: ls -la $HOME
