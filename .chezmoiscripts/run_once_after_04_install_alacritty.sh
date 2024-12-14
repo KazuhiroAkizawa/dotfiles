@@ -53,6 +53,6 @@ _install_alacritty() {
     cp extra/completions/_alacritty ${ZDOTDIR:-~}/.zsh_functions/_alacritty
 }
 
-if !(type alacritty >/dev/null 2>&1); then
+if ! type alacritty >/dev/null 2>&1; then
     _install_alacritty
 fi

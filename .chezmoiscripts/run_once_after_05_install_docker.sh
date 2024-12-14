@@ -39,6 +39,6 @@ _install_docker() {
     echo "You must reboot the machine to run docker without sudo."
 }
 
-if !(type docker >/dev/null 2>&1); then
+if ! type docker >/dev/null 2>&1; then
     _install_docker
 fi

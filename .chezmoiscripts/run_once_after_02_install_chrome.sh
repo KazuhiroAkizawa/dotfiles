@@ -11,6 +11,6 @@ _install_chrome() {
     sudo apt-get install -y google-chrome-stable
 }
 
-if !(type google-chrome >/dev/null 2>&1); then
+if ! type google-chrome >/dev/null 2>&1; then
     _install_chrome
 fi

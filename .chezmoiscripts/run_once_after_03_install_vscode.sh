@@ -14,6 +14,6 @@ _install_vscode() {
     sudo apt-get install -y code
 }
 
-if !(type code >/dev/null 2>&1); then
+if ! type code >/dev/null 2>&1; then
     _install_vscode
 fi
