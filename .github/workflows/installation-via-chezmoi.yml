@@ -29,4 +29,4 @@ jobs:
           type alacritty
       - name: Test Docker installation
         run: |
-          zsh -c ". $(chezmoi source-path)/run_once_install_docker.sh && _install_docker"
+          zsh -c ". $(chezmoi source-path)/.chezmoiscripts/run_once_after_05_install_docker.sh && _install_docker"
