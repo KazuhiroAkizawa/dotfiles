@@ -3,10 +3,19 @@ on:
   push:
     branches:
       - "feature/**"
+defaults:
+  run:
+    shell: bash -euo pipefail {0}
 jobs:
   installation-on-ubuntu:
     runs-on: ubuntu-22.04
     steps:
+      - name: Remove pre-installed apps
+        run: |
+          sudo apt-get remove -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+          sudo apt-get remove -y google-chrome-stable
+          sudo apt-get clean
+          sudo apt-get autoremove
       - name: Install chezmoi
         run: sh -c "$(wget -qO- get.chezmoi.io)" -- -b $HOME/.local/bin
       - name: Show home directory before appling
@@ -19,3 +28,9 @@ jobs:
         run: ls -la $HOME
       - name: Check if zsh is installed
         run: zsh -c "echo zsh has been successfully installed."
+      - name: Check if GUI apps are installed
+        run: |
+          type google-chrome
+          type code
+          type alacritty
+          type docker
