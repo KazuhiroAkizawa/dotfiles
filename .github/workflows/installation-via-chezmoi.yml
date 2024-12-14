@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - "feature/**"
+      - "fix/**"
 defaults:
   run:
     shell: bash -euo pipefail {0}
