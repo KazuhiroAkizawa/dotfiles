@@ -6,7 +6,7 @@ set -euxo pipefail
 
 _install_alacritty() {
     # Install Rust language and tools
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
     rustup override set stable
     rustup update stable
 
