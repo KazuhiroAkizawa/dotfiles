@@ -10,6 +10,12 @@ jobs:
   installation-on-ubuntu:
     runs-on: ubuntu-22.04
     steps:
+      - name: Remove pre-installed apps
+        run: |
+          sudo apt-get remove -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+          sudo apt-get remove -y google-chrome-stable
+          sudo apt-get clean
+          sudo apt-get autoremove
       - name: Install chezmoi
         run: sh -c "$(wget -qO- get.chezmoi.io)" -- -b $HOME/.local/bin
       - name: Show home directory before appling
@@ -27,6 +33,4 @@ jobs:
           type google-chrome
           type code
           type alacritty
-      - name: Test Docker installation
-        run: |
-          zsh -c ". $(chezmoi source-path)/.chezmoiscripts/run_once_after_05_install_docker.sh && _install_docker"
+          type docker
