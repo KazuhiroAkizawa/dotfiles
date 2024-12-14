@@ -32,6 +32,7 @@ _install_alacritty() {
     infocmp alacritty >/dev/null 2>&1 || sudo tic -xe alacritty,alacritty-direct extra/alacritty.info
 
     # Desktop Entry
+    sudo apt-get install -y desktop-file-utils
     mkdir -p ~/.local/bin
     sudo cp target/release/alacritty ~/.local/bin
     sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
