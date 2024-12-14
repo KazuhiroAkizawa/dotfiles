@@ -17,3 +17,5 @@ jobs:
         run : ls -la $(chezmoi source-path)
       - name: Show home directory after appling
         run: ls -la $HOME
+      - name: Check if zsh is installed
+        run: zsh -c "echo zsh has been successfully installed."
