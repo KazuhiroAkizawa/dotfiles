@@ -2,14 +2,15 @@
 
 set -euxo pipefail
 
-# https://qiita.com/yoshiyasu1111/items/e21a77ed68b52cb5f7c8
-# https://zenn.dev/karaage0703/books/80b6999d429abc8051bb/viewer/5b814b
-# https://raw.githubusercontent.com/karaage0703/ubuntu-setup/master/install-vscode.sh
+# https://code.visualstudio.com/docs/setup/linux
 
 _install_vscode() {
-    curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >microsoft.gpg
-    sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
-    sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor >packages.microsoft.gpg
+    sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg
+    echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" |
+        sudo tee /etc/apt/sources.list.d/vscode.list >/dev/null
+    rm -f packages.microsoft.gpg
+    sudo apt install apt-transport-https
     sudo apt-get update -y
     sudo apt-get install -y code
 }
