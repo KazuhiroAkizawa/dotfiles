@@ -34,7 +34,7 @@ _install_alacritty() {
     # Desktop Entry
     sudo apt-get install -y desktop-file-utils
     mkdir -p ~/.local/bin
-    sudo cp target/release/alacritty ~/.local/bin
+    cp target/release/alacritty ~/.local/bin
     sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg
     sudo desktop-file-install extra/linux/Alacritty.desktop
     sudo update-desktop-database
