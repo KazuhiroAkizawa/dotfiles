@@ -21,12 +21,24 @@ jobs:
         run: sh -c "$(wget -qO- get.chezmoi.io)" -- -b $HOME/.local/bin
       - name: Show home directory before appling
         run: ls -la $HOME
+      - name: Show .bashrc and .profile
+        run: |
+          cat $HOME/.bashrc
+          echo
+          cat $HOME/.profile
       - name: Apply dotfiles
         run: chezmoi init --apply --branch ${{ github.ref_name }} $GITHUB_REPOSITORY_OWNER
       - name: Show source directory of dotfiles
         run : ls -la $(chezmoi source-path)
       - name: Show home directory after appling
         run: ls -la $HOME
+      - name: Show .bashrc, .profile, and .zshenv
+        run: |
+          cat $HOME/.bashrc
+          echo
+          cat $HOME/.profile
+          echo
+          cat $HOME/.zshenv
       - name: Check if zsh is installed
         run: zsh -c "echo zsh has been successfully installed."
       - name: Check if GUI apps are installed
