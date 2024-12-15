@@ -27,6 +27,14 @@ jobs:
         run : ls -la $(chezmoi source-path)
       - name: Show home directory after appling
         run: ls -la $HOME
+      - name: Show .zshenv and .zshrc
+        run: |
+          echo "===== .zshenv ====="
+          cat $HOME/.zshenv
+          echo "===== .zshrc ====="
+          cat $HOME/.zshrc
+      - name: Show PATH in zsh
+        run: zsh -c "echo \"$PATH\""
       - name: Check if zsh is installed
         run: zsh -c "echo zsh has been successfully installed."
       - name: Check if GUI apps are installed
@@ -34,4 +42,7 @@ jobs:
           type google-chrome
           type code
           type alacritty
+      - name: Check if CUI tools are installed
+        run: |
           type docker
+          type starship

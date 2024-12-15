@@ -1,0 +1,5 @@
+[".local/share/fonts/FiraCode"]
+    type = "archive"
+    url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.tar.xz"
+    exact = true
+    private = true
