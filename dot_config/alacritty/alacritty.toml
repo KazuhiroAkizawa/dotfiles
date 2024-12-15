@@ -5,7 +5,7 @@ import = [
 
 [terminal.shell]
 # Example
-program = "/usr/bin/bash"
+program = "/usr/bin/zsh"
 args = ["-l"]
 
 [font]
