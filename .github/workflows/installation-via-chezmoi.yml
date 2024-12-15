@@ -34,11 +34,9 @@ jobs:
         run: ls -la $HOME
       - name: Show .bashrc, .profile, and .zshenv
         run: |
-          cat $HOME/.bashrc
-          echo
-          cat $HOME/.profile
-          echo
           cat $HOME/.zshenv
+      - name: Show PATH in zsh
+        run: zsh -c "echo \"$PATH\""
       - name: Check if zsh is installed
         run: zsh -c "echo zsh has been successfully installed."
       - name: Check if GUI apps are installed

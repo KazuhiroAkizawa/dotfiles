@@ -117,3 +117,10 @@ fi
 
 # Rust
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+
+# change to zsh
+# https://docs.aws.amazon.com/ja_jp/workspaces/latest/adminguide/manage_ubuntu_workspace.html#override_default_shell_ubuntu
+if type zsh >/dev/null 2>&1; then
+    export SHELL=$(which zsh)
+    [ -n "$SSH_TTY" ] && exec $SHELL
+fi
