@@ -24,14 +24,6 @@ white   = '#c7c7c7'
 
 # Bright colors
 [colors.bright]
-black   = '#41505e'
-red     = '#d95468'
-green   = '#8bd49c'
-yellow  = '#ebbf83'
-blue    = '#5ec4ff'
-magenta = '#e27e8d'
-cyan    = '#70e1e8'
-white   = '#ffffff'
 black   = '#676767'
 red     = '#ff6d67'
 green   = '#5ff967'
