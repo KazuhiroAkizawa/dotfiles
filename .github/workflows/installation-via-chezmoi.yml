@@ -35,8 +35,6 @@ jobs:
           cat $HOME/.zshrc
       - name: Show PATH in zsh
         run: zsh -c "echo \"$PATH\""
-      - name: Check if zsh is installed
-        run: zsh -c "echo zsh has been successfully installed."
       - name: Check if GUI apps are installed
         run: |
           type google-chrome
@@ -46,3 +44,5 @@ jobs:
         run: |
           type docker
           type starship
+      - name: Show AWS CLI version
+        run: aws --version
